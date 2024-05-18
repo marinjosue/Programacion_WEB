@@ -50,7 +50,6 @@ body{
     height: 100%;
     display: flex;
     flex-direction: row;
-  
     justify-content: center;
     align-items: center;
 
@@ -65,6 +64,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .imagenes{
     display: flex;
     width: 100%;
@@ -90,6 +90,13 @@ body{
 .title-banner{
     font-size: 3em;
 }
+
+.title-text{
+    margin: 10px;
+    font-size: 1.2em;
+
+}
+
 /*btn-banner*/
 .btm-banner{
     background-color: brown;
@@ -120,26 +127,115 @@ body{
     margin: .8em;
 }
 
-/*pseudo clase:hover*/
-/*a:hover{
-    color:red;
-}*/
 .menu:hover{
     background-color: beige;
     color: rgb(35, 35, 35);
     transition: 0.5s;
 }
+
+
+/* Elkin estuvo aqui xdddd*/
 /* article*/
-.article{
-    width: 100%;
+
+.article {
+    margin: 1.5em;
+    width: 96%;
     height: auto;
-    background-color: rgb(254, 254, 255);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: row;
     gap: 20px;
-    
-
 }
+
+.box-galery1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container {
+    width: 350px; /* Ancho fijo */
+    height: 250px; /* Alto fijo */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
+}
+
+.box-img1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+}
+
+.btm-img {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-article {
+    font-size: 2em;
+    margin: 10px 0 10px 0;
+    padding: 0;
+}
+
+.title-articleDerecha {
+    font-size: 2em;
+    margin: 10px 0 10px 0;
+    padding: 0;
+    text-align: right;
+}
+
+.fecha-autores {
+    font-style: italic;
+    font-size: 1.3em;
+    margin: 0 0 25px 0;
+    padding: 0;
+    color: red;
+}
+
+.fecha-autoresDerecha{
+    font-style: italic;
+    font-size: 1.3em;
+    margin: 0 0 25px 0;
+    padding: 0;
+    color: red;
+    text-align: right;
+}
+
+.paragraph-article {
+    font-size: 1.5em;
+    margin: 10px;
+    padding: 0 0 50px 0;
+    text-align: justify;
+}
+
+.clasificacion {
+    color: #007BFF;
+    border-bottom: 1px solid #007BFF; /* Agregar línea debajo del texto */
+    padding: 5px;
+}
+
+.clasificacionDerecha {
+    color: #007BFF;
+
+    text-align: right;
+    border-bottom: 1px solid #007BFF; 
+    padding: 5px;/* Agregar línea debajo del texto */
+}
+
+
+
+
+
 .content-group {
     display: flex;
     flex-direction: row;
@@ -155,18 +251,6 @@ body{
     justify-content: space-between;
 }
 
-
-.box-img1{
-    width: 100%;
-    
-}
-.paragraph-article{
-    font-size: 1.25em;
-    width: 80%;
-    text-align: justify;
-    margin: 2em;
-}
-
 .galery{
     width: 80%;
     height: 50%;
@@ -175,15 +259,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
 }
-.box-galery1{
-    display: flex;
-    width: 24%;
-    height: 80%;
-    background-color: rgb(255, 255, 255);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
+
 .box-galery{
     width: 24%;
     height: 100%;
@@ -193,7 +269,6 @@ body{
     align-items: center;
     justify-content: flex-start;
 }
-
 
 .box-img{
     width: 100%;
