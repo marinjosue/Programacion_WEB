@@ -1,0 +1,238 @@
+/* a todo el documento*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estilo para body*/
+body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(244, 247, 247);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+/* Estilo para header*/
+.header{
+    width: 80%;
+    height: 10em;
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+/* Logo*/
+.logo{
+    object-fit: cover;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+    align-items: center;
+    justify-content: center;
+}
+/* Estilo para Nav*/
+.nav{
+    width:  100%;
+    height: 3em;
+    margin: 1em;
+    border-radius: 0.5em;
+    background-color: rgb(249, 251, 253);
+    text-decoration: none;
+}
+
+.barnav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  
+    justify-content: center;
+    align-items: center;
+
+}
+/* Banner*/
+.banner{
+    width: 100%;
+    height: calc(100vh - 7em);
+    background-color: rgb(248, 172, 172);
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.imagenes{
+    display: flex;
+    width: 100%;
+    height: 90%;
+   
+}
+.imagenes img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity:.8;
+    transition: .5s ease;
+}
+.imagenes img:hover{
+    cursor: default;
+    width: 300px;
+    opacity: 2;
+    filter: contrast(120%);
+
+}
+
+/*Titulo de banner*/
+.title-banner{
+    font-size: 3em;
+}
+/*btn-banner*/
+.btm-banner{
+    background-color: brown;
+    text-decoration: none;
+    padding: 1em 4em;
+    color: aliceblue;
+    font-size: 1.25em;
+    margin: 1em;
+    border-radius: 0.5em;
+}
+.btm-banner:hover{
+    background-color: rgb(250, 248, 245);
+    color: rgb(11, 12, 12);
+    transition: all;
+}
+
+/*Menu*/
+.menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17, 9, 9);
+    border-radius: 10px;
+    color: aliceblue;
+    margin: .8em;
+}
+
+/*pseudo clase:hover*/
+/*a:hover{
+    color:red;
+}*/
+.menu:hover{
+    background-color: beige;
+    color: rgb(35, 35, 35);
+    transition: 0.5s;
+}
+/* article*/
+.article{
+    width: 100%;
+    height: auto;
+    background-color: rgb(254, 254, 255);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+
+}
+.content-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px; /* Añade espacio entre la imagen y el texto */
+}
+.article-img {
+    width: auto;
+    height: auto;
+    background-color: rgb(206, 201, 228);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.box-img1{
+    width: 100%;
+    
+}
+.paragraph-article{
+    font-size: 1.25em;
+    width: 80%;
+    text-align: justify;
+    margin: 2em;
+}
+
+.galery{
+    width: 80%;
+    height: 50%;
+    background-color: rgb(76, 42, 212);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.box-galery1{
+    display: flex;
+    width: 24%;
+    height: 80%;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.box-galery{
+    width: 24%;
+    height: 100%;
+    background-color: rgb(18, 18, 19);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.box-img{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(223, 29, 29);
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    float: left;
+}
+
+.btm-img{
+    background-color: brown;
+    flex-direction: none;
+    padding:0.5em 3em;
+    color: rgb(255, 255, 255);
+    font: size 1.25em; 
+    margin: 1em;
+    border-radius: 0.5em;
+}
+
+.box-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* footer*/
+.footer{
+    width:  100%;
+    height: 4em;
+    background-color: rgb(162, 238, 234);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
