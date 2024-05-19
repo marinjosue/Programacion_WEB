@@ -130,6 +130,7 @@ body{
     margin: .8em;
     cursor: pointer;
 }
+
 .menu-c{
     width: 100%;
     height: 100%;
@@ -144,24 +145,40 @@ body{
     cursor: pointer;
 }
 
+.menu-c {
+    position: relative; /* Agregado para permitir el posicionamiento relativo */
+}
+
 .contact-bar {
     display: none;
     position: absolute;
-    top: 39%; 
+    top: calc(100% + 10px); /* Aparecerá justo debajo del botón de contacto */
     left: 0;
-    width: 100%;
+    width: auto;
     background-color: #444;
     color: white;
-    text-align: center;
-    padding: 10px 0;
+    padding: 10px;
     z-index: 1000;
 }
+
+.menu-c:hover .contact-bar {
+    background-color: beige;
+    color: rgb(35, 35, 35);
+    transition: 0.5s;
+}
+
 
 .menu-c:hover .contact-bar {
     display: block;
 }
 
 .menu:hover{
+    background-color: beige;
+    color: rgb(35, 35, 35);
+    transition: 0.5s;
+}
+
+.menu-c:hover {
     background-color: beige;
     color: rgb(35, 35, 35);
     transition: 0.5s;
@@ -364,12 +381,61 @@ body{
 }
 
 /* footer*/
-.footer{
-    width:  100%;
-    height: 4em;
-    background-color: rgb(162, 238, 234);
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 0;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
 }
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease; /* Agregamos una transición suave al cambio de color */
+}
+
+.footer-links li a:hover {
+    color: #ffa500; /* Cambiamos el color al pasar el mouse sobre los enlaces */
+}
+
+/* Estilos para la fila */
+.row {
+    width: 100%;
+  }
+  
+  /* Estilos para las columnas */
+.col-md-6 {
+    position: relative;
+    width: 100%; /* El ancho de la columna será del 100% */
+  }
+  
+  /* Estilos para los créditos */
+  .sydney-credits {
+    font-size: 14px;
+    color: #fff; /* Texto blanco */
+    background-color: #000; /* Fondo negro */
+    padding: 10px; /* Espaciado interno */
+    width: 100%; /* Ancho igual al 100% */
+    text-align: center;
+  }
+  
+  
