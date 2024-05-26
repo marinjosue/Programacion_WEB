@@ -56,6 +56,20 @@ body{
     align-items: center;
 
 }
+.menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17, 9, 9);
+    border-radius: 10px;
+    color: aliceblue;
+    margin: .8em;
+    cursor: pointer;
+}
+
 /* Banner*/
 .banner{
     width: 100%;
@@ -71,17 +85,8 @@ body{
     display: flex;
     width: 100%;
     height: 90%;
-   
-   
 }
-.img{
-    max-width: 100%;/*la imagen nunca va a ser mas grande que el contenedor*/
-    height: 500px;/*la altura se ajusta automaticamente*/
-    display: block;/*asegura que la imagen no tenga un margen extra*/ 
-    width: 700px;
 
-
-}
 .imagenes img{
     width: 0px;
     height: 300px;
@@ -90,6 +95,8 @@ body{
     object-fit: cover;
     opacity:.8;
     transition: .5s ease;
+    max-width: 100%;/*la imagen nunca va a ser mas grande que el contenedor*/
+    display: block;/*asegura que la imagen no tenga un margen extra*/  
 }
 .imagenes img:hover{
     cursor: default;
@@ -131,19 +138,7 @@ body{
 }
 
 /*Menu*/
-.menu{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(17, 9, 9);
-    border-radius: 10px;
-    color: aliceblue;
-    margin: .8em;
-    cursor: pointer;
-}
+
 
 .menu a{
     color: white;
