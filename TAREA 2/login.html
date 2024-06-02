@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="mensaje">Datos del Formulario</h2>
+        <div id="form-data"></div>
+        <a href="index.html" class="btn-regresar">Regresar</a>
+    </div>
+
+    <script>
+         // Función para obtener los parámetros de consulta
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const queryArray = queryString.split("&");
+            queryArray.forEach(item => {
+                const pair = item.split("=");
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+            });
+            return params;
+        }
+
+        // Mostrar los datos del formulario
+        window.onload = function() {
+            const params = getQueryParams();
+            const formDataDiv = document.getElementById("form-data");
+            let formDataHtml = "<ul>";
+            for (const key in params) {
+                if (params.hasOwnProperty(key)) {
+                    formDataHtml += `<li><strong>${key}:</strong> ${params[key]}</li>`;
+                }
+            }
+            formDataHtml += "</ul>";
+            formDataDiv.innerHTML = formDataHtml;
+        };
+    </script>
+</body>
+</html>
