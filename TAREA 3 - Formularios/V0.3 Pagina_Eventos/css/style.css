@@ -16,16 +16,42 @@ body{
     align-items: center;
 
 }
-/* Estilo para header*/
-.header{
-    margin: 2em;
-    width: 80%;
+/* Estilo para header */
+.header {
+    position: fixed;
+    top: 0; /* Fija el header en la parte superior de la página */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
     height: 10em;
+    margin: 0; /* Elimina el margen para evitar espacios no deseados */
     background-color: rgb(250, 250, 250);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    z-index: 999; /* Asegúrate de que el header esté encima de otros elementos */
+}
+
+/* Estilo para Nav */
+.nav {
+    position: fixed;
+    top: 10em; /* Fija el nav justo debajo del header */
+    width: 100%;
+    height: 3em;
+    margin: 0; /* Elimina el margen para evitar espacios no deseados */
+    background-color: rgb(249, 251, 253);
+    text-decoration: none;
+    z-index: 998; /* Asegúrate de que el nav esté debajo del header */
+}
+.barnav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}.content {
+    margin-top: 13em; /* Ajusta esto para dejar espacio para el header y el nav */
+    padding: 20px;
 }
 /* Logo*/
 .logo{
@@ -36,25 +62,6 @@ body{
     margin: 1em;
     align-items: center;
     justify-content: center;
-}
-/* Estilo para Nav*/
-.nav{
-    width:  100%;
-    height: 3em;
-    margin: 1em;
-    border-radius: 0.5em;
-    background-color: rgb(249, 251, 253);
-    text-decoration: none;
-}
-
-.barnav{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
 }
 .menu{
     width: 100%;
@@ -73,12 +80,13 @@ body{
 /* Banner*/
 .banner{
     width: 100%;
-    height: calc(100vh - em);
     background-color: rgb(162, 238, 234);
     display: flex;
     flex-direction:column;
     justify-content: center;
     align-items: center;
+    padding: 10%;
+ 
 }
 
 .imagenes{
@@ -88,10 +96,9 @@ body{
 }
 
 .imagenes img{
-    width: 0px;
-    height: 300px;
+    width: 100px;
+    height: 400px;
     flex-grow: 1;
-    height: 300px;
     object-fit: cover;
     opacity:.8;
     transition: .5s ease;
@@ -230,7 +237,6 @@ body{
     justify-content: first baseline;
     gap: 20px;
 }
-
 
 .articulo-Confe{
     display: flex;
