@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio de Sesión</title>
     <link rel="stylesheet" href="css/loginStyles.css">    
 </head>
 <body>
@@ -17,64 +17,84 @@
         <p>¿Quieres formar parte de la vanguardia en la gestión de eventos y conferencias? </p>
         <p>Únete a CONE y descubre una plataforma diseñada para simplificar cada paso de tu experiencia</p>
         <p>Regístrate ahora y sé parte de una comunidad dinámica donde la innovación y el networking se fusionan para impulsar tu éxito en el mundo de los eventos.</p>
-
     </div>
 </div>
 
-    
-
-    <!--Diseñar formulario-->
-    <div class="login-container">
-        <h2 class="mensaje">Bienvenidos</h2>
-        <p>Inicio de sesión</p>
-        <!--formulario-->
-        <form action="login.html" method="get"> 
-
-            <div class="form-group">
-                <label for="username">Usuario </label>
-                <input type="text" name="username" id="username" placeholder="username" minlength="4" maxlength="20" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" placeholder="***********" minlength="8" required>
-            </div>
-            <div class="form-option">
-                <label><input type="checkbox" name="recordar">Recordar Usuario</label>
-                <a href="#" class="Recordatorio"> Olvidé mi Contraseña</a>
-            </div>
-            <button type="button" class="btn-inicioSesion">INICIAR SESIÓN</button>
-            <button type="button" class="btn-registro">Registrarse</button>
-        </form>
-        <p>Otras formas de hacer login:</p>
-        <div class="social-button">
-            <a href="#" class="btn google">GOOGLE</a>
-            <a href="#" class="btn facebook">FACEBOOK</a>
-            <a href="#" class="btn twitter">TWITTER</a>
+<!-- Diseño del formulario de inicio de sesión -->
+<div class="login-container">
+    <h2 class="mensaje">Bienvenidos</h2>
+    <p>Inicio de sesión</p>
+    <!--formulario-->
+    <form id="loginForm" method="get"> 
+        <div class="form-group">
+            <label for="username">Usuario</label>
+            <input type="text" name="username" id="username" placeholder="Usuario" minlength="4" maxlength="20" required>
         </div>
-
-        <!-- CONEXION -->
-        <script>
-            // Redireccionar a registrar
-            function redirectToRegistrar() {
-                window.location.href = 'registrar.html';
-            }    
-            const registerBtn = document.querySelector('.btn-registro');  
-            registerBtn.addEventListener('click', redirectToRegistrar);
-
-            // Verificar campos y redirigir a index
-            const loginBtn = document.querySelector('.btn-inicioSesion');
-            loginBtn.addEventListener('click', function() {
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-
-                if (username.length >= 4 && username.length <= 20 && password.length >= 8) {
-                    window.location.href = 'index.html';
-                } else {
-                    alert('Por favor, completa todos los campos correctamente. MInimo 8 caracteres en la contraseña');
-                }
-            });
-        </script>
-
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" placeholder="***********" minlength="8" required>
+        </div>
+        <div class="form-option">
+            <label><input type="checkbox" name="recordar">Recordar Usuario</label>
+            <a href="#" class="Recordatorio">Olvidé mi Contraseña</a>
+        </div>
+        <button type="submit" class="btn-inicioSesion">INICIAR SESIÓN</button>
+        <button type="button" class="btn-registro">Registrarse</button>
+    </form>
+    <p>Otras formas de hacer login:</p>
+    <div class="social-button">
+        <a href="#" class="btn google">GOOGLE</a>
+        <a href="#" class="btn facebook">FACEBOOK</a>
+        <a href="#" class="btn twitter">TWITTER</a>
     </div>
+    <div id="message"></div> <!-- Aquí se mostrará el mensaje de error -->
+</div>
+
+<script>
+    // Array donde se almacenarán los usuarios
+    let usuarios;
+
+    // Función para cargar el archivo JSON de usuarios
+    function cargarUsuarios() {
+        fetch('usuarios/usuarios.json')
+            .then(response => response.json())
+            .then(data => {
+                usuarios = data;
+                console.log('Usuarios cargados:', usuarios);
+            })
+            .catch(error => console.error('Error al cargar usuarios:', error));
+    }
+
+    // Redireccionar a la página de registro
+    function redirectToRegistrar() {
+        window.location.href = 'registrar.html';
+    }
+
+    // Validar el inicio de sesión
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        const usuarioEncontrado = usuarios.find(user => user.usuario === username && user.contraseña === password);
+        
+        if (usuarioEncontrado) {
+            // Usuario encontrado, redirigir a la página principal
+            window.location.href = 'index.html';
+        } else {
+            // Usuario no encontrado, mostrar mensaje de error
+            document.getElementById('message').textContent = 'Usuario o contraseña incorrectos';
+        }
+    });
+
+    // Cargar usuarios al cargar la página
+    window.onload = cargarUsuarios;
+
+    // Redireccionar a la página de registro al hacer clic en el botón de registro
+    const registerBtn = document.querySelector('.btn-registro');  
+    registerBtn.addEventListener('click', redirectToRegistrar);
+</script>
+
 </body>
 </html>

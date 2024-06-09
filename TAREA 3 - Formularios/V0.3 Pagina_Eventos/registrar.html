@@ -11,7 +11,7 @@
 <body>
     <div class="register-container">
         <h2>REGISTRO DE DATOS</h2>
-        <form action="registrar.html" method="post">
+        <form id="register-form" method="post">
 
             <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -97,10 +97,33 @@
     </div>
 
     <script>
-        // Redireccionar a login.html
         function goBack() {
-            window.history.back();
+            window.location.href= 'login.html';
         }
+
+        document.getElementById('register-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Recolectar datos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const correo = document.getElementById('correo').value;
+            const contraseña = document.getElementById('password').value; // Captura la contraseña correctamente
+
+            // Crear objeto con los datos del usuario
+            const userData = {
+                nombre: nombre,
+                apellido: apellido,
+                correo: correo,
+                contraseña: contraseña // Agrega la contraseña al objeto userData
+            };
+
+            // Guardar los datos del usuario en localStorage
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Redirigir a la página de información de registro
+            window.location.href = 'registrar_info.html';
+        });
     </script>
 
     <script src="js/funciones.js"></script>

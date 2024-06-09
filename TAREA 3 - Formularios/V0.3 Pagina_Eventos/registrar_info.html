@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Registro</title>
+    <link rel="stylesheet" href="css/registrar_info.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Información de Registro</h2>
+        <div id="register-data"></div>
+    </div>
+    <div class="button-container">
+        <button type="button" class="btn-login" onclick="goBack()">Iniciar Sesión</button>
+    </div>
+    
+    <script>
+        // Obtener datos del LocalStorage
+        const userData = JSON.parse(localStorage.getItem('userData')) || {};
+
+        // Mostrar los datos en la página
+        const registerDataDiv = document.getElementById('register-data');
+        for (const key in userData) {
+            const dataParagraph = document.createElement('p');
+            dataParagraph.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}: ${userData[key]}`;
+            registerDataDiv.appendChild(dataParagraph);
+        }
+    </script>
+
+    <script>
+        function goBack() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

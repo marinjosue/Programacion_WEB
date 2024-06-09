@@ -1,0 +1,49 @@
+body {
+    font-family: sans-serif; /* Tipo de letra */
+    background: linear-gradient(to right, #1f4037, #99f2c8);
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Añadido para alinear elementos en columna */
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    margin-bottom: 20px; /* Espacio adicional abajo del contenedor */
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-container p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.button-container {
+    text-align: center; /* Alinear el botón al centro */
+}
+
+.btn-login {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #dc3545; /* Color de fondo del botón */
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #bb2d3b;
+}
