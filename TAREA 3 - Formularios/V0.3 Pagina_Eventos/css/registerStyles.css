@@ -1,23 +1,111 @@
 /* Estilos generales */
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: linear-gradient(to right, #d2d2d2, #00a4fc);
     margin: 0;
     padding: 0;
 }
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 97%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f7efef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+.logo {
+height: 40px;  
+}
+
+.nav {
+    flex: 1;
+    text-align: right;
+}
+
+.barnav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.barnav li {
+    margin-left: 20px;
+    height: 40px;  
+    display: flex;
+    align-items: center;
+}
+
+.barnav a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.barnav a:hover {
+    color: #0a0a0a;
+}
+
+h1.title-article {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+    padding: 30px;
+}
+/*Menu*/
+.menu a{
+    margin: 1em;
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+}
+
+.menu:hover{
+    margin: .5em;
+    background-color: rgb(142, 230, 215);
+    color: rgb(23, 24, 24);
+    transition: all;
+}
+
+.formaCo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+    max-height: 8000px;
+}
+
 
 .register-container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #fff;
+    background-color: rgb(20, 19, 20);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 8000px;
+}
+.register-container1 {
+    background-color: rgb(13, 13, 14);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+
 }
 
 h2 {
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-bottom: 20px;
+    color: #f8f2f3;
 }
 
 .form-row {
@@ -32,6 +120,8 @@ h2 {
 
 .form-group {
     margin-bottom: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ccc;
 }
 
 label {
@@ -57,11 +147,13 @@ input[type="checkbox"] {
 
 .btn-registro,
 .btn-login {
-    padding: 10px 20px;
+    width: 100%;
+    padding: 10px;
     border: none;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
-    color: #fff;
+    margin-bottom: 10px;
 }
 
 .btn-registro {
@@ -97,3 +189,63 @@ input[type="checkbox"] {
     box-sizing: border-box;
     margin-bottom: 10px;
 }
+
+/* footer*/
+.footer {
+    background-color: #080808;
+    color: #fff;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease; /* Agregamos una transición suave al cambio de color */
+}
+
+.footer-links li a:hover {
+    color: #ffa500; /* Cambiamos el color al pasar el mouse sobre los enlaces */
+}
+
+/* Estilos para la fila */
+.row {
+    width: 100%;
+  }
+  
+  /* Estilos para las columnas */
+.col-md-6 {
+    position: relative;
+    width: 100%; /* El ancho de la columna será del 100% */
+  }
+  
+  /* Estilos para los créditos */
+  .sydney-credits {
+    font-size: 14px;
+    color: #fff; /* Texto blanco */
+    background-color: #000; /* Fondo negro */
+    padding: 10px; /* Espaciado interno */
+    width: 100%; /* Ancho igual al 100% */
+    text-align: center;
+    height: 100%;
+  }

@@ -16,79 +16,89 @@ body{
     align-items: center;
 
 }
-/* Estilo para header */
+
 .header {
-    position: fixed;
-    top: 0; /* Fija el header en la parte superior de la página */
-    width: 100%; /* Asegúrate de que ocupe todo el ancho */
-    height: 10em;
-    margin: 0; /* Elimina el margen para evitar espacios no deseados */
-    background-color: rgb(250, 250, 250);
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
     align-items: center;
-    z-index: 999; /* Asegúrate de que el header esté encima de otros elementos */
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f7efef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+.logo {
+height: 40px;  
 }
 
-/* Estilo para Nav */
 .nav {
-    position: fixed;
-    top: 10em; /* Fija el nav justo debajo del header */
-    width: 100%;
-    height: 3em;
-    margin: 0; /* Elimina el margen para evitar espacios no deseados */
-    background-color: rgb(249, 251, 253);
+    flex: 1;
+    text-align: right;
+}
+
+.barnav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.barnav li {
+    margin-left: 20px;
+    height: 40px;  
+    display: flex;
+    align-items: center;
+}
+
+.barnav a{
     text-decoration: none;
-    z-index: 998; /* Asegúrate de que el nav esté debajo del header */
+    font-weight: bold;
 }
-.barnav{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}.content {
-    margin-top: 13em; /* Ajusta esto para dejar espacio para el header y el nav */
-    padding: 20px;
+
+.barnav a:hover {
+    color: #0a0a0a;
 }
-/* Logo*/
-.logo{
-    object-fit: cover;
-    height:100%;
-    display: flex;
-    flex-direction: row;
+
+/*Menu*/
+.menu a{
     margin: 1em;
-    align-items: center;
-    justify-content: center;
+    color: rgb(22, 22, 22);
+    text-decoration: none;
 }
-.menu{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 0, 0);
-    border-radius: 10px;
-    color: aliceblue;
-    margin: .8em;
-    cursor: pointer;
+
+.menu:hover{
+    margin: .5em;
+    background-color: rgb(142, 230, 215);
+    color: rgb(23, 24, 24);
+    transition: all;
 }
 
 /* Banner*/
 .banner{
     width: 100%;
+    height: 30px;
     background-color: rgb(162, 238, 234);
     display: flex;
     flex-direction:column;
     justify-content: center;
     align-items: center;
     padding: 10%;
- 
 }
-
+.contact-bar {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); /* Aparecerá justo debajo del botón de contacto */
+    left: 0;
+    width: auto;
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+}
 .imagenes{
     display: flex;
     width: 100%;
@@ -124,7 +134,6 @@ body{
 .title-text{
     font-size: 1.2em;
     padding: 3em;
-
 }
 
 /*btn-banner*/
@@ -144,66 +153,9 @@ body{
     transition: all;
 }
 
-/*Menu*/
 
 
-.menu a{
-    color: white;
-    text-decoration: none;
-}
 
-.menu-c{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(17, 9, 9);
-    border-radius: 10px;
-    color: aliceblue;
-    margin: .8em;
-    cursor: pointer;
-}
-
-.menu-c {
-    position: relative; /* Agregado para permitir el posicionamiento relativo */
-}
-
-.contact-bar {
-    display: none;
-    position: absolute;
-    top: calc(100% + 10px); /* Aparecerá justo debajo del botón de contacto */
-    left: 0;
-    width: auto;
-    background-color: #444;
-    color: white;
-    padding: 10px;
-    z-index: 1000;
-}
-
-.menu-c:hover .contact-bar {
-    background-color: beige;
-    color: rgb(35, 35, 35);
-    transition: 0.5s;
-}
-
-
-.menu-c:hover .contact-bar {
-    display: block;
-}
-
-.menu:hover{
-    background-color: beige;
-    color: rgb(35, 35, 35);
-    transition: 0.5s;
-}
-
-.menu-c:hover {
-    background-color: beige;
-    color: rgb(35, 35, 35);
-    transition: 0.5s;
-}
 
 
 /* Elkin estuvo aqui xdddd*/
