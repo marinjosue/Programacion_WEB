@@ -5,53 +5,89 @@
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-/* Estilo para body*/
-body{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(244, 247, 247);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+       /* Estilo para body */
+       body {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(244, 247, 247);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
 
-}
+    /* Estilos para el menú desplegable */
+    .contact-bar1 {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        top: 100%; /* Colocar justo debajo del menú */
+        left: 0;
+        width: 227px; /* Ajustar el ancho según tus necesidades */
+    }
 
-.header {
-    display: flex;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #f7efef;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-}
-.logo {
-height: 40px;  
-}
+    .contact-bar1 button {
+        background-color: #75dddd;
+        color: rgb(19, 18, 18);
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: block;
+        margin: 5px 0;
+        width: 100%;
+        text-align: left;
+    }
 
-.nav {
-    flex: 1;
-    text-align: right;
-}
+    .contact-bar1 button:hover {
+        background-color: #e9f8f1;
+        color: rgb(11, 12, 12);
 
-.barnav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    }
 
-    display: flex;
-    justify-content: flex-end;
-}
+    .menu:hover .contact-bar1 {
+        display: block;
+    }
+
+    .header {
+        display: flex;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #f7efef;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .logo {
+        height: 40px;  
+    }
+
+    .nav {
+        flex: 1;
+        text-align: right;
+    }
+
+    .barnav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
 
 .barnav li {
     margin-left: 20px;
     height: 40px;  
     display: flex;
     align-items: center;
+    position: relative; /* Asegura que los submenús se posicionen correctamente */
 }
 
 .barnav a{
@@ -475,5 +511,4 @@ height: 40px;
     width: 100%; /* Ancho igual al 100% */
     text-align: center;
   }
-  
-  
+

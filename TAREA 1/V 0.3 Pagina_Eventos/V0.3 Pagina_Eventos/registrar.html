@@ -16,33 +16,36 @@
         <!-- Menú de navegación -->
         <nav class="nav">
             <ul class="barnav">
-                <li class="menu"><a href="index.html">CONFERENCIAS</a></li>
-                <li class="menu"><a href="Eventos.html">EVENTOS</a></li>
-                <li class="menu"><a href="#ubicacion">UBICACION</a></li>
-                <li class="menu"><a href="#programacion">PROGRAMACION C|O|N|E</a></li>
-                <li class="menu"><a href="login.html">ENTRAR</a></li>
-                <li class="menu"><a href="registrar.html">REGISTRARSE</a></li>
+                <li class="menu"><a href="index.html">Conferencia</a></li>
+                <li class="menu"><a href="Eventos.html">Eventos</a></li>
+                <li class="menu"><a href="#ubicacion">Quienes somos</a></li>
+                <li class="menu"><a href="#programacion">Programacion C|O|N|E</a></li>
+                <li class="menu"><a href="login.html">Entrar</a></li>
+                <li class="menu"><a href="registrar.html">Registrarse</a></li>
             </ul>
         </nav>
     </header>
     <section class="formaCo">
     <div class="register-container">
+
         <h2>REGISTRO DE DATOS</h2>
         <form id="register-form" method="post">
-
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" pattern="[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]{3,30}" title="Ingrese un nombre válido en español con una longitud de 3 a 30 caracteres" required>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" pattern="[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]{3,30}" 
+                title="Ingrese un nombre válido en español con una longitud de 3 a 30 caracteres" required>
             </div>
 
             <div class="form-group">
                 <label for="apellido">Apellidos</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Apellidos" pattern="[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]{3,30}" title="Ingrese apellidos válidos en español con una longitud de 3 a 30 caracteres" required>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellidos" pattern="[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]{3,30}" 
+                title="Ingrese apellidos válidos en español con una longitud de 3 a 30 caracteres" required>
             </div>
 
             <div class="form-group">
                 <label for="correo">Correo</label>
-                <input type="email" id="correo" name="correo" placeholder="Correo electrónico" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Ingrese un correo electrónico válido: ejemplo@correo.com" required>
+                <input type="email" id="correo" name="correo" placeholder="Correo electrónico" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
+                title="Ingrese un correo electrónico válido: ejemplo@correo.com" required>
             </div>
 
             <div class="form-group">
@@ -107,8 +110,8 @@
         </form>
         </div>
         <div class="register-container1">
-            <h2>Ya tien cuenta?</h2>
-            <button type="button" class="btn-login" onclick="goBack()">Atrás</button>
+            <h2>Ya tiene cuenta?</h2>
+            <button type="button" class="btn-login" onclick="goBack()">Login</button>
         </div>
         </section>
 
