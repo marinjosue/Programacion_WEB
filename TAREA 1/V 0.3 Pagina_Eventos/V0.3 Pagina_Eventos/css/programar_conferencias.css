@@ -8,14 +8,6 @@ body {
     background-color: #f4f4f4; /* Color de fondo */
 }
 
-/* Estilos para el encabezado y pie de página */
-header, footer {
-    background-color: #333; /* Color de fondo oscuro */
-    color: white; /* Texto en blanco */
-    text-align: center; /* Texto centrado */
-    padding: 1em 0; /* Relleno vertical */
-}
-
 /* Contenedor principal con diseño flexible */
 .container {
     display: flex; /* Flexbox para organizar elementos en fila */
