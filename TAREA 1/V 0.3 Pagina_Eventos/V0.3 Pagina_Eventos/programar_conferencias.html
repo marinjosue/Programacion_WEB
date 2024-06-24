@@ -6,11 +6,31 @@
     <title>Conferencia De Registro En Línea</title>
     <!-- Enlace al archivo de estilos CSS -->
     <link rel="stylesheet" href="css/programar_conferencias.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Encabezado del sitio -->
-    <header>
-        <h1>Conferencia De Registro En Línea</h1>
+       <!-- Encabezado -->
+       <header class="header">
+        <!-- Logo -->
+        <img class="logo" src="img/Logo_CONE.png" alt="Logo" >
+        <!-- Menú de navegación -->
+        <nav class="nav">
+            <ul class="barnav">
+                <li class="menu"><a href="index.html">Conferencia</a></li>
+                <li class="menu"><a href="Eventos.html">Eventos</a></li>
+                <li class="menu"><a href="quienes-somos.html">Quienes somos</a></li>
+                <li class="menu" id="menu-var">
+                    <a href="#programacion">Programacion C|O|N|E</a>
+                    <div class="contact-bar1">
+                        <button onclick="window.location.href='programar_eventos.html'">Programar Eventos</button>
+                        <button onclick="window.location.href='programar_conferencias.html'">Programar Conferencias</button>
+                    </div>
+                </li>
+              </li>
+                <li class="menu"><a href="login.html">Entrar</a></li>
+                <li class="menu"><a href="registrar.html">Registrarse</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Contenedor principal para el contenido -->
