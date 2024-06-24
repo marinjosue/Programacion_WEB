@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferencia De Registro En Línea</title>
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="css/programar_conferencias.css">
+</head>
+<body>
+    <!-- Encabezado del sitio -->
+    <header>
+        <h1>Conferencia De Registro En Línea</h1>
+    </header>
+
+    <!-- Contenedor principal para el contenido -->
+    <div class="container">
+        <!-- Sección principal donde se encuentra el formulario -->
+        <main>
+            <form action="/submit" method="post">
+                <p>Por favor, rellene el siguiente formulario. Nos pondremos en contacto con usted tan pronto como sea posible.</p>
+                
+                <!-- Campo para nombre completo -->
+                <label for="full-name">Nombre Completo *</label>
+                <div class="name-container">
+                    <input type="text" id="first-name" name="first-name" placeholder="Primer Nombre" required>
+                    <input type="text" id="last-name" name="last-name" placeholder="Apellido" required>
+                </div>
+                
+                <!-- Campo para área de interés -->
+                <label for="area">Área *</label>
+                <select id="area" name="area" required>
+                    <option value="" disabled selected>Por Favor, Seleccione</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="ciencia">Ciencia</option>
+                    <option value="negocios">Negocios</option>
+                </select>
+                
+                <!-- Campo para dirección -->
+                <label for="address">Dirección *</label>
+                <input type="text" id="street-address" name="street-address" placeholder="Dirección De La Calle" required>
+                <input type="text" id="address-line-2" name="address-line-2" placeholder="Línea De Dirección 2">
+                <input type="text" id="city" name="city" placeholder="Ciudad" required>
+                <input type="text" id="state" name="state" placeholder="Estado / Provincia" required>
+                <input type="text" id="zip-code" name="zip-code" placeholder="Postal / Zip Code" required>
+                
+                <!-- Campo para correo electrónico -->
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                
+                <!-- Campo para número de teléfono -->
+                <label for="phone">Número De Teléfono *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" required>
+                
+                <!-- Pregunta sobre primera vez en la conferencia -->
+                <label for="first-time">Primera vez para asistir a esta conferencia? *</label>
+                <input type="radio" id="yes" name="first-time" value="yes" required>
+                <label for="yes">Sí</label>
+                <input type="radio" id="no" name="first-time" value="no" required>
+                <label for="no">No</label>
+                
+                <!-- Campo para tamaño de camiseta -->
+                <label for="tshirt-size">¿Cuál es tu tamaño de camiseta? *</label>
+                <select id="tshirt-size" name="tshirt-size" required>
+                    <option value="" disabled selected>Por Favor, Seleccione</option>
+                    <option value="small">Pequeño</option>
+                    <option value="medium">Mediano</option>
+                    <option value="large">Grande</option>
+                    <option value="x-large">Extra Grande</option>
+                </select>
+                
+                <!-- Información sobre la cuota de inscripción -->
+                <label for="registration-fee">La Cuota De Inscripción</label>
+                <p>Conferencia De Registración De La Cuota (Personal) $50.00</p>
+                <p>Cuota De Inscripción (Corporativo) $300.00</p>
+                
+                <!-- Campo para número de participantes -->
+                <label for="participants"># de Participantes</label>
+                <input type="number" id="participants" name="participants" value="1" min="1">
+                
+                <!-- Campo que muestra el total de inscripción -->
+                <p>Total $<span id="total">0.00</span></p>
+                
+                <!-- Campo para subir archivos relacionados -->
+                <label for="files">Archivos Relacionados</label>
+                <input type="file" id="files" name="files" multiple>
+                
+                <!-- Botón para enviar el formulario -->
+                <input type="submit" value="Enviar Formulario">
+            </form>
+        </main>
+
+        <!-- Sección lateral con detalles del evento -->
+        <aside>
+            <h2>Detalles del Evento</h2>
+            <p>Fecha: 15 de Julio, 2024</p>
+            <p>Ubicación: Auditorio Principal</p>
+        </aside>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Conferencias Internacionales</p>
+    </footer>
+
+    <!-- Script para calcular el total de la cuota de inscripción -->
+    <script>
+        // Añade un listener al campo de número de participantes
+        document.getElementById('participants').addEventListener('input', function() {
+            const fee = 50; // Define la cuota de inscripción por participante
+            const participants = this.value; // Obtiene el valor del número de participantes
+            // Calcula el total y lo muestra en el campo de total
+            document.getElementById('total').textContent = (fee * participants).toFixed(2);
+        });
+
+    </script>
+</body>
+</html>
