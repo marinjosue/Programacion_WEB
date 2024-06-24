@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Evento</title>
+</head>
+<body>
+    <h1>Informacion del evento creado:</h1>
+
+    <div id="resultados"></div>
+
+    <script>
+        // Función para obtener los parámetros de la URL
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+    // Obtener los datos de la URL
+    var nombreEvento = getParameterByName('nombreEvento');
+            var descripcion = getParameterByName('descripcion');
+            var fecha = getParameterByName('fecha');
+            var capacidadMaxima = getParameterByName('capacidadMaxima');
+            var direccion = getParameterByName('direccion');
+
+            // Nuevos campos
+            var nombre = getParameterByName('nombre');
+            var apellido = getParameterByName('apellido');
+            var correo = getParameterByName('correo');
+            var telefono = getParameterByName('telefono');
+
+            // Mostrar los datos en la página
+            document.getElementById('resultados').innerHTML = `
+                <p><strong>Nombre del Evento:</strong> ${nombreEvento}</p>
+                <p><strong>Descripción:</strong> ${descripcion}</p>
+                <p><strong>Fecha:</strong> ${fecha}</p>
+                <p><strong>Capacidad Máxima:</strong> ${capacidadMaxima}</p>
+                <p><strong>Dirección:</strong> ${direccion}</p>
+
+                <!-- Nuevos campos -->
+                <p><strong>Nombre:</strong> ${nombre}</p>
+                <p><strong>Apellido:</strong> ${apellido}</p>
+                <p><strong>Correo Electrónico:</strong> ${correo}</p>
+                <p><strong>Número de Teléfono:</strong> ${telefono}</p>
+            `;
+    </script>
+</body>
+</html>
