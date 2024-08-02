@@ -1,3 +1,102 @@
+/* Estilos para el encabezado */
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f7efef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+/* Estilos para el logo */
+.logo {
+    height: 40px;  
+}
+
+/* Estilos para la navegación */
+.nav {
+    flex: 1;
+    text-align: right;
+}
+
+.barnav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.barnav li {
+    margin-left: 20px;
+    height: 40px;  
+    display: flex;
+    align-items: center;
+    position: relative; /* Asegura que los submenús se posicionen correctamente */
+}
+
+.barnav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.barnav a:hover {
+    color: #0a0a0a;
+}
+
+/* Estilos para el menú */
+.menu a {
+    margin: 1em;
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+}
+
+.menu:hover {
+    margin: .5em;
+    background-color: rgb(142, 230, 215);
+    color: rgb(23, 24, 24);
+    transition: all;
+}
+
+/* Estilos para el menú desplegable */
+.contact-bar1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; /* Colocar justo debajo del menú */
+    left: 0;
+    width: 227px; /* Ajustar el ancho según tus necesidades */
+}
+
+.contact-bar1 button {
+    background-color: #75dddd;
+    color: rgb(19, 18, 18);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-bar1 button:hover {
+    background-color: #e9f8f1;
+    color: rgb(11, 12, 12);
+}
+
+.menu:hover .contact-bar1 {
+    display: block;
+}
+
+
 /* Estilos generales */
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
