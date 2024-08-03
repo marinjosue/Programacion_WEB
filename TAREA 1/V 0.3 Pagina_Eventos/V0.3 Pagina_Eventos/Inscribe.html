@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscribe</title>
+    <link rel="stylesheet" href="css/registerStyles.css">
+</head>
+
+<body>
+       <!-- Encabezado -->
+       <header class="header">
+        <!-- Logo -->
+        <img class="logo" src="img/Logo_CONE.png" alt="Logo" >
+        <!-- Menú de navegación -->
+        <nav class="nav">
+            <ul class="barnav">
+                <li class="menu"><a href="index.html">Conferencia</a></li>
+                <li class="menu"><a href="Eventos.html">Eventos</a></li>
+                <li class="menu"><a href="quienes-somos.html">Quienes somos</a></li>
+                <li class="menu" id="menu-var">
+                    <a href="#programacion">Programacion C|O|N|E</a>
+                    <div class="contact-bar1">
+                        <button onclick="window.location.href='programar_eventos.html'">Programar Eventos</button>
+                        <button onclick="window.location.href='programar_conferencias.html'">Programar Conferencias</button>
+                    </div>
+                </li>
+              </li>
+                <li class="menu"><a href="login.html">Entrar</a></li>
+                <li class="menu"><a href="registrar.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="formaCo">
+    <div class="register-container">
+
+        <h2>INSCRIBE A EVENTO</h2>
+        <form id="register-form" method="post">
+            <h2>Datos del Evento</h2>
+            <div class="form-group">
+                <label for="id_evento">ID Evento:</label><br>
+                <input type="text" id="id_evento" name="id_evento" required>
+            </div>
+         
+            <div class="form-group">
+                <label for="id_cliente">ID Cliente:</label><br>
+                <input type="text" id="id_cliente" name="id_cliente" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha_inscripcion">Fecha de Inscripción:</label><br>
+                <input type="date" id="fecha_inscripcion" name="fecha_inscripcion" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="estado_pago">Estado de Pago:</label><br>
+                <input type="text" id="estado_pago" name="estado_pago" required>
+            </div>
+
+            <div class="form-group">
+            <label for="notificacion">Notificación:</label><br>
+            <input type="text" id="notificacion" name="notificacion" required>
+            </div>
+
+            <div class="form-group">
+                  <!-- Campo para número de participantes -->
+                  <p>Cuota de Inscripcion por Persona: $50.00</p>
+                  <label for="participants">Número de Personas</label><br>
+                  <input type="number" id="participants" name="participants" value="1" min="1">
+                  <!-- Campo que muestra el total de inscripción -->
+                <p>Precio $<span id="total">0.00</span></p>
+            </div>
+
+            <div class="form-group">
+                
+            </div>
+
+            <div class="form-group">
+                <label for="forma_pago">Forma de Pago:</label><br>
+                <input type="text" id="forma_pago" name="forma_pago" required>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" name="terminos" required>Acepto términos y condiciones</label>
+                <button type="submit" class="btn-registro">Enviar</button>
+            </div>
+
+       </form>
+        </div>
+        <div class="register-container1">
+            <h2>Pagar</h2>
+            <button type="button" class="btn-login" onclick="">Login</button>
+        </div>
+        </section>
+
+        <script>
+            // Añade un listener al campo de número de participantes
+            document.getElementById('participants').addEventListener('input', function() {
+                const fee = 50; // Define la cuota de inscripción por participante
+                const participants = this.value; // Obtiene el valor del número de participantes
+                // Calcula el total y lo muestra en el campo de total
+                document.getElementById('total').textContent = (fee * participants).toFixed(2);
+            });
+    
+        </script>
+
+    <script src="js/funciones.js"></script>
+       <!-- Pie de página -->
+       <section class="pie_pag">
+        <footer class="footer">
+            <div class="footer-social-links">
+                <h5 class="footer-heading">Follow @IEEE</h5>
+                <ul class="footer-links">
+                    <li><a class="twitter" href="https://ieeemce.org/news/">Página oficial de IEEE</a></li>
+                </ul>
+            </div>
+            <div class="footer-social-links">
+                <h5 class="footer-heading">Follow @ESPE</h5>
+                <ul class="footer-links">
+                    <li><a class="twitter" href="https://www.espe.edu.ec/">Página oficial de la ESPE</a></li>
+                </ul>
+            </div>
+        </footer>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="sydney-credits">© Universidad de las Fuerzas Armadas ESPE <br> Todos los derechos reservados 2024</div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </section>
+</body>
+</html>
