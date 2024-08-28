@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registrar</title>
+    <title>inscribe</title>
     <!-- Enlazar al CSS-->
     <link rel="stylesheet" href="css/men_res.css">
 </head>
@@ -15,18 +15,18 @@
     <!-- Menú de navegación -->
     <nav class="nav">
         <ul class="barnav" id="navbar">
-            <li class="menu"><a href="index.html">Conferencia</a></li>
-            <li class="menu"><a href="Eventos.html">Eventos</a></li>
-            <li class="menu"><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li class="menu"><a href="index.php">Conferencia</a></li>
+            <li class="menu"><a href="Eventos.php">Eventos</a></li>
+            <li class="menu"><a href="quienes-somos.php">Quiénes somos</a></li>
             <li class="menu" id="menu-var">
                 <a href="#programacion">Programación C|O|N|E</a>
                 <div class="contact-bar1">
-                    <button onclick="window.location.href='programar_eventos.html'">Programar Eventos</button>
-                    <button onclick="window.location.href='programar_conferencias.html'">Programar Conferencias</button>
+                    <button onclick="window.location.href='programar_eventos.php'">Programar Eventos</button>
+                    <button onclick="window.location.href='programar_conferencias.php'">Programar Conferencias</button>
                 </div>
             </li>
-            <li class="menu"><a href="login.html">Entrar</a></li>
-            <li class="menu"><a href="registrar.html">Registrarse</a></li>
+            <li class="menu"><a href="login.php">Entrar</a></li>
+            <li class="menu"><a href="registrar.php">Registrarse</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>

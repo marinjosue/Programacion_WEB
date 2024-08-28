@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos</title>
+    <title>CONFERENCIAS</title>
     <!-- Enlazar al CSS-->
-    <link rel="stylesheet" href="css/men_res.css">
-    <link rel="stylesheet" href="css/evento.css">
+    <link rel="stylesheet" href="css/cssIndex.css">
 </head>
 <body>
    <!-- Encabezado -->
-<header class="header">
+   <header class="header">
     <!-- Logo -->
     <img class="logo" src="img/Logo_CONE.png" alt="Logo">
     <!-- Menú de navegación -->
     <nav class="nav">
         <ul class="barnav" id="navbar">
-            <li class="menu"><a href="index.html">Conferencia</a></li>
-            <li class="menu"><a href="Eventos.html">Eventos</a></li>
-            <li class="menu"><a href="quienes-somos.html">Quiénes somos</a></li>
+            <li class="menu"><a href="index.php">Conferencia</a></li>
+            <li class="menu"><a href="Eventos.php">Eventos</a></li>
+            <li class="menu"><a href="quienes-somos.php">Quiénes somos</a></li>
             <li class="menu" id="menu-var">
                 <a href="#programacion">Programación C|O|N|E</a>
                 <div class="contact-bar1">
-                    <button onclick="window.location.href='programar_eventos.html'">Programar Eventos</button>
-                    <button onclick="window.location.href='programar_conferencias.html'">Programar Conferencias</button>
+                    <button onclick="window.location.href='programar_eventos.php'">Programar Eventos</button>
+                    <button onclick="window.location.href='programar_conferencias.php'">Programar Conferencias</button>
                 </div>
             </li>
-            <li class="menu"><a href="login.html">Entrar</a></li>
-            <li class="menu"><a href="registrar.html">Registrarse</a></li>
+            <li class="menu"><a href="login.php">Entrar</a></li>
+            <li class="menu"><a href="registrar.php">Registrarse</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -37,24 +36,14 @@
     </nav>
 </header>
 
-<script>
-function toggleMenu() {
-    var nav = document.getElementById('navbar');
-    nav.classList.toggle('show');
-}
-</script>
-
-
     <!-- Carrusel de imágenes (no se modifica para preservar funcionalidad) -->
-    </header>
-    <!--Banner/Portada-->
     <div class="imagenes">
-    <img class="img" src="img/banner-eventos1.jpg" alt="Imagen">
-    <img class="img"src="img/banner-eventos1.png" alt="Imagen">
-    <img class="img"src="img/banner-eventos2.png" alt="Imagen">
-    <img class="img"src="img/banner-eventos4.png" alt="Imagen">
-    <img class="img"src="img/banner-eventos5.jpg" alt="Imagen">
-    <img class="img"src="img/banner-eventos6.jpg" alt="Imagen">
+        <img src="img/img_conf.jpg" alt="Imagen">
+        <img src="img/banner2.webp" alt="Imagen">
+        <img src="img/banner3.jpeg" alt="Imagen">
+        <img src="img/banner3.jpg" alt="Imagen">
+        <img src="img/banner4.jpeg" alt="Imagen">
+        <img src="img/banner5.jpg" alt="Imagen">
     </div>
 
     <!-- Contenido principal -->
@@ -68,7 +57,8 @@ function toggleMenu() {
                 Desde conferencias de vanguardia hasta eventos especializados, nuestra plataforma ofrece 
                 oportunidades únicas para conectar con expertos, descubrir nuevas perspectivas y hacer 
                 realidad tus proyectos más innovadores. Únete a nosotros y sé parte de los nuevos encuentros 
-                que marcan la diferencia."<h3>
+                que marcan la diferencia."
+            </h3>
             <a href="#" class="btm-banner">CONTACTO</a>
         </section>
     </main>
@@ -100,5 +90,15 @@ function toggleMenu() {
       </div>
       
     </section>
+
+    <!-- JavaScript para el menú hamburguesa -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.getElementById('navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>

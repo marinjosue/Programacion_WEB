@@ -1,3 +1,39 @@
+<?php
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "root"; // Reemplaza con tu usuario de MySQL
+$password = ""; // Reemplaza con tu contraseña de MySQL
+$dbname = "cone"; // Nombre de la base de datos
+
+// Crear la conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Verificar si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Consulta SQL para verificar las credenciales
+    $sql = "SELECT * FROM CLIENTE WHERE EMAIL = '$email' AND CONTRASENA = '$password'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Usuario encontrado, redirigir a la página de conferencias
+        header("Location: index.php");
+    } else {
+        // Usuario o contraseña incorrectos
+        echo "<script>alert('Usuario o contraseña incorrectos');</script>";
+    }
+}
+
+// Cerrar la conexión
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,42 +46,42 @@
 </head>
 <body>
     <!-- Encabezado -->
-    <header class="header">
-        <!-- Logo -->
-        <img class="logo" src="img/Logo_CONE.png" alt="Logo">
-        <!-- Menú de navegación -->
-        <nav class="nav">
-            <ul class="barnav" id="navbar">
-                <li class="menu"><a href="index.html">Conferencia</a></li>
-                <li class="menu"><a href="Eventos.html">Eventos</a></li>
-                <li class="menu"><a href="quienes-somos.html">Quiénes somos</a></li>
-                <li class="menu" id="menu-var">
-                    <a href="#programacion">Programación C|O|N|E</a>
-                    <div class="contact-bar1">
-                        <button onclick="window.location.href='programar_eventos.html'">Programar Eventos</button>
-                        <button onclick="window.location.href='programar_conferencias.html'">Programar Conferencias</button>
-                    </div>
-                </li>
-                <li class="menu"><a href="login.html">Entrar</a></li>
-                <li class="menu"><a href="registrar.html">Registrarse</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-        </nav>
-    </header>
+<header class="header">
+    <!-- Logo -->
+    <img class="logo" src="img/Logo_CONE.png" alt="Logo">
+    <!-- Menú de navegación -->
+    <nav class="nav">
+        <ul class="barnav" id="navbar">
+            <li class="menu"><a href="index.php">Conferencia</a></li>
+            <li class="menu"><a href="Eventos.php">Eventos</a></li>
+            <li class="menu"><a href="quienes-somos.php">Quiénes somos</a></li>
+            <li class="menu" id="menu-var">
+                <a href="#programacion">Programación C|O|N|E</a>
+                <div class="contact-bar1">
+                    <button onclick="window.location.href='programar_eventos.php'">Programar Eventos</button>
+                    <button onclick="window.location.href='programar_conferencias.php'">Programar Conferencias</button>
+                </div>
+            </li>
+            <li class="menu"><a href="login.php">Entrar</a></li>
+            <li class="menu"><a href="registrar.php">Registrarse</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+</header>
     <main>
         <!-- Contenedor principal -->
         <section class="formaCo">
             <div class="container">
                 <h2 class="mensaje">Inicio de Sesión</h2>
                 <!-- Diseño del formulario de inicio de sesión -->     
-                <form id="loginForm" method="get">
+                <form id="loginForm" method="post">
                     <div class="form-group">
                         <label for="username">Usuario</label>
-                        <input type="text" name="username" id="username" placeholder="Usuario" minlength="4" maxlength="20" required>
+                        <input type="text" name="username" id="username" placeholder="Usuario" minlength="4" maxlength="25" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña</label>
