@@ -1,0 +1,103 @@
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Container Styles */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Register Container */
+.register-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.mensaje {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Form Options */
+.form-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-option a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-option a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn-inicioSesion,
+.btn-Registrarse {
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-inicioSesion:hover,
+.btn-Registrarse:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container, .register-container {
+        max-width: 90%;
+    }
+}

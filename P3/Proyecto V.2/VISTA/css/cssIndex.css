@@ -1,0 +1,372 @@
+/* Estilos generales */
+body {
+    padding-top: 60px; /* Ajusta según la altura de tu navbar */
+    width: 100%;
+    background-color: rgb(244, 247, 247);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+/* Estilos para el encabezado */
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f7efef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.logo {
+    height: 40px;  
+}
+
+.nav {
+    flex: 1;
+    text-align: right;
+}
+
+.barnav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.barnav li {
+    margin-left: 20px;
+    height: 40px;  
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.barnav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.barnav a:hover {
+    color: #0a0a0a;
+}
+
+/* Estilos para el menú desplegable */
+.contact-bar1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    width: 227px;
+}
+
+.contact-bar1 button {
+    background-color: #ececec;
+    color: rgb(19, 18, 18);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-bar1 button:hover {
+    background-color: #e9f8f1;
+    color: rgb(11, 12, 12);
+}
+
+.menu:hover .contact-bar1 {
+    display: block;
+}
+
+/* Estilos para el menú hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* Estilos para el banner y el contenido */
+.banner {
+    width: 100%;
+    padding: 20px;
+    background-color: #dbe6ec;
+    text-align: center;
+}
+.banner_estado {
+    width: 100%;
+    padding: 20px;
+    background-color: #6cf1d0;
+    text-align: center;
+}
+
+.title-banner {
+    font-size: 2em;
+    margin: 0;
+}
+
+.title-text {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.btm-banner {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .barnav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .barnav.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .banner {
+        padding: 15px;
+    }
+
+    .title-banner {
+        font-size: 1.5em;
+    }
+
+    .title-text {
+        font-size: 1em;
+    }
+
+    .btm-banner {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .title-banner {
+        font-size: 1.2em;
+    }
+
+    .title-text {
+        font-size: 0.9em;
+    }
+
+    .btm-banner {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* ESTILO PARA CARRUSEL (sin modificaciones) */
+/* Estilos para el carrusel */
+.imagenes {
+    display: flex;
+    width: 100%;
+    height: 90%;
+}
+
+.imagenes img {
+    width: 100px;
+    height: 400px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+    max-width: 100%; /* la imagen nunca va a ser mas grande que el contenedor */
+    display: block; /* asegura que la imagen no tenga un margen extra */
+}
+
+.imagenes img:hover {
+    cursor: default;
+    width: 300px;
+    opacity: 2;
+    filter: contrast(120%);
+}
+
+/* ESTILO PARA Pe de pagina (sin modificaciones) */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease; /* Agregamos una transición suave al cambio de color */
+}
+
+.footer-links li a:hover {
+    color: #ffa500; /* Cambiamos el color al pasar el mouse sobre los enlaces */
+}
+
+/* Estilos para la fila */
+.row {
+    width: 100%;
+  }
+  
+  /* Estilos para las columnas */
+.col-md-6 {
+    position: relative;
+    width: 100%; /* El ancho de la columna será del 100% */
+  }
+  
+  /* Estilos para los créditos */
+  .sydney-credits {
+    font-size: 14px;
+    color: #fff; /* Texto blanco */
+    background-color: #000; /* Fondo negro */
+    padding: 10px; /* Espaciado interno */
+    width: 100%; /* Ancho igual al 100% */
+    text-align: center;
+  }
+
+    /* Estilos para eventos */
+/* Estilo general para los eventos */
+/* Estilo general para los cuadros de eventos */
+/* Contenedor de eventos como grid de 3 columnas */
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las columnas */
+    margin-top: 20px;
+}
+
+/* Estilo general para los cuadros de eventos */
+.evento {
+    background-color: #e3f2fd; /* Fondo de color azul claro */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Estilo para el contenido del evento */
+.evento-contenido {
+    padding: 20px;
+    border-left: 4px solid #f44336; /* Línea de color rojo en el borde izquierdo */
+}
+
+/* Títulos y subtítulos */
+.evento h2 {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.evento h3 {
+    color: #000;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Estilo para los botones */
+.evento .btn {
+    display: block;
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.evento .btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Hover effect para mejorar la interactividad */
+.evento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes de diseño responsivo */
+@media (max-width: 768px) {
+    .eventos-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas más pequeñas */
+    }
+
+    .evento {
+        padding: 15px;
+    }
+
+    .evento h2 {
+        font-size: 20px;
+    }
+
+    .evento .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .eventos-grid {
+        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+}

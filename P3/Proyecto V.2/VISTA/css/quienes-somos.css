@@ -1,0 +1,570 @@
+/* Estilos generales */
+body {
+    padding-top: 60px; /* Ajusta según la altura de tu navbar */
+    width: 100%;
+    background-color: rgb(244, 247, 247);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+/* Estilos para el encabezado */
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f7efef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav {
+    flex: 1;
+    text-align: right;
+}
+
+.barnav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row; /* Ajuste importante */
+}
+
+.barnav li {
+    margin-left: 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.barnav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.barnav a:hover {
+    color: #0a0a0a;
+}
+
+/* Estilos para el menú desplegable */
+.contact-bar1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    width: 227px;
+}
+
+.contact-bar1 button {
+    background-color: #ececec;
+    color: rgb(19, 18, 18);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-bar1 button:hover {
+    background-color: #e9f8f1;
+    color: rgb(11, 12, 12);
+}
+
+.menu:hover .contact-bar1 {
+    display: block;
+}
+
+/* Estilos para el menú hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* Estilos para el banner y el contenido */
+.banner {
+    width: 100%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.title-banner {
+    font-size: 2em;
+    margin: 0;
+}
+
+.title-text {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.btm-banner {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .barnav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: static;
+    }
+
+    .barnav.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .banner {
+        padding: 15px;
+    }
+
+    .title-banner {
+        font-size: 1.5em;
+    }
+
+    .title-text {
+        font-size: 1em;
+    }
+
+    .btm-banner {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .title-banner {
+        font-size: 1.2em;
+    }
+
+    .title-text {
+        font-size: 0.9em;
+    }
+
+    .btm-banner {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* ESTILO PARA CARRUSEL (sin modificaciones) */
+/* Estilos para el carrusel */
+
+/* ESTILO PARA Pe de pagina (sin modificaciones) */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease; /* Agregamos una transición suave al cambio de color */
+}
+
+.footer-links li a:hover {
+    color: #ffa500; /* Cambiamos el color al pasar el mouse sobre los enlaces */
+}
+
+/* Estilos para la fila */
+.row {
+    width: 100%;
+  }
+  
+  /* Estilos para las columnas */
+.col-md-6-1{
+    position: relative;
+    width: 100%; /* El ancho de la columna será del 100% */
+  }
+  
+  /* Estilos para los créditos */
+  .sydney-credits {
+    font-size: 14px;
+    color: #fff; /* Texto blanco */
+    background-color: #000; /* Fondo negro */
+    padding: 10px; /* Espaciado interno */
+    width: 100%; /* Ancho igual al 100% */
+    text-align: center;
+  }
+
+/* Contenido principal */
+.content-wrapper {
+    padding: 40px;
+    background-color: #fff;
+}
+
+.wrapper {
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.gray-wrapper {
+    background-color: #f7f7f7;
+}
+
+.light-wrapper {
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+.feature-s {
+    background-color: #e9e9e9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #f3ec78, #af4261);
+     color: transparent;
+}
+
+.lead {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Estilos para la galería de logos */
+.gallery-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.gallery-logos div {
+    padding: 10px;
+}
+
+.gallery-logos img {
+    max-height: 50px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-logos img:hover {
+    opacity: 1;
+}
+
+/* Estilos de la sección de parallax */
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.heading {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.larger {
+    font-size: 18px;
+}
+
+/* Estilos de las cajas de contenido */
+.box {
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.color-box {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .nav ul {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+        text-align: left;
+    }
+
+    .barnav {
+        flex-direction: column;
+    }
+
+    .contact-bar1 {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Estilos para .wrapper.zinc-wrapper.inverse-text */
+.wrapper.zinc-wrapper.inverse-text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas por defecto */
+    gap: 20px; /* Espacio entre las cajas */
+    padding: 20px;
+    background-color: #f7f7f7; /* Fondo oscuro para contraste */
+    border-radius: 15px; /* Bordes redondeados del contenedor principal */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave del contenedor */
+    width: 100%; /* Asegura que el contenedor use todo el ancho disponible */
+    max-width: 100%; /* Permite usar todo el ancho sin restricciones adicionales */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1; /* Mantener aspecto cuadrado */
+    background-color: #f7f7f7; /* Color de fondo ejemplo */
+    color: #fff; /* Color de texto ejemplo */
+    border-radius: 10px; /* Bordes redondeados para las cajas */
+    min-width: 100px; /* Tamaño mínimo para mantener la responsividad */
+    max-width: 100%; /* Asegura que cada cuadrado use todo el espacio asignado */
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(160, 160, 160, 0.534); /* Sombra sutil para las cajas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.item:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(160, 160, 160, 0.534); /* Sombra más pronunciada al pasar el mouse */
+    background-color:  rgb(226, 226, 255); /* Cambio de color de fondo al pasar el mouse */
+}
+
+.box.box-bg.color-box.no-radius.inverse-text.mb-0 {
+    background-color:  rgb(60, 81, 173);
+    color: #ffffff;
+}
+
+/* Media Queries para Responsividad */
+@media (min-width: 1000px) {
+    .wrapper.zinc-wrapper.inverse-text {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas para pantallas grandes */
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper.zinc-wrapper.inverse-text {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas medianas */
+    }
+}
+
+@media (max-width: 580px) {
+    .wrapper.zinc-wrapper.inverse-text {
+        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    }
+}
+
+/* Estilo general para el contenedor principal */
+.wrapper.light-wrapper {
+    background-color: #f9f9f9; /* Fondo claro */
+    padding: 60px 20px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    text-align: center; /* Centrar el contenido */
+}
+
+/* Estilo del título de la sección */
+.section-title {
+    font-size: 2.5rem; /* Tamaño de fuente grande */
+    color: #333; /* Color del texto */
+    margin-bottom: 40px; /* Espaciado inferior */
+    position: relative; /* Posicionamiento relativo para decoraciones */
+}
+
+.section-title::after {
+    content: ''; /* Elemento decorativo */
+    display: block; /* Mostrar como bloque */
+    width: 200px; /* Ancho de la línea */
+    height: 4px; /* Altura de la línea */
+    background-color: #ff6f61; /* Color de la línea */
+    margin: 10px auto 0; /* Centrar la línea debajo del título */
+    border-radius: 2px; /* Bordes redondeados de la línea */
+}
+
+/* Estilos para las filas internas */
+.row {
+    display: flex; /* Usar flexbox para alineación */
+    align-items: center; /* Alinear elementos al centro verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    margin-bottom: 100px; /* Espaciado inferior entre filas */
+}
+
+/* Estilos para columnas */
+.col-lg-6 {
+    flex: 1; /* Usar espacio disponible */
+    max-width: 50%; /* Limitar ancho máximo al 50% */
+    padding: 15px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+/* Estilos para las imágenes de los iconos */
+.icon-img {
+    width: 100px; /* Tamaño de los iconos */
+    height: 100px; /* Mantener iconos cuadrados */
+    margin: 0 auto 20px; /* Centrar y agregar espaciado inferior */
+    transition: transform 0.3s ease; /* Animación suave */
+    /*display: flex; /* Utiliza Flexbox para controlar la alineación */
+    /*justify-content: left; /* Alinea el contenido (la imagen) a la derecha */
+    /*padding: 10px; /* Añadir un poco de espacio alrededor de la imagen */
+}
+
+.space20 {
+    height: 20px;
+    width: 100%;
+}
+
+.icon-img:hover {
+    transform: scale(1.1); /* Aumentar tamaño al pasar el mouse */
+}
+
+/* Estilo para los títulos de las secciones de cada columna */
+h2 {
+    font-size: 1.8rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    margin-bottom: 15px; /* Espaciado inferior */
+    transition: color 0.3s ease; /* Transición de color */
+    text-align: center;
+}
+
+h2:hover {
+    color: #ff6f61; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilo para los párrafos */
+p.lead2 {
+    font-size: 1.1rem; /* Tamaño de fuente */
+    color: #666; /* Color del texto */
+    line-height: 1.6; /* Altura de línea */
+    margin: 0; /* Sin margen adicional */
+    text-align: right;
+}
+
+/* Estilos responsivos */
+@media (max-width: 992px) {
+    .col-lg-6 {
+        max-width: 100%; /* Usar todo el ancho en pantallas pequeñas */
+    }
+    .row {
+        flex-direction: column; /* Colocar columnas en una sola fila */
+    }
+    .icon-img {
+        margin-bottom: 15px; /* Reducir espaciado inferior */
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem; /* Reducir tamaño de fuente del título */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem; /* Ajustar tamaño de fuente en pantallas muy pequeñas */
+    }
+    h2 {
+        font-size: 1.5rem; /* Ajustar tamaño de fuente de los subtítulos */
+    }
+    p.lead2 {
+        font-size: 1rem; /* Ajustar tamaño de fuente de los párrafos */
+    }
+}

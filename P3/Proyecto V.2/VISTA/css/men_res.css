@@ -1,0 +1,259 @@
+/* Estilos generales */
+body {
+    padding-top: 60px; /* Ajusta según la altura de tu navbar */
+    width: 100%;
+    background-color: rgb(244, 247, 247);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+/* Estilos para el encabezado */
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f7efef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav {
+    flex: 1;
+    text-align: right;
+}
+
+.barnav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row; /* Ajuste importante */
+}
+
+.barnav li {
+    margin-left: 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.barnav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.barnav a:hover {
+    color: #0a0a0a;
+}
+
+/* Estilos para el menú desplegable */
+.contact-bar1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    width: 227px;
+}
+
+.contact-bar1 button {
+    background-color: #ececec;
+    color: rgb(19, 18, 18);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-bar1 button:hover {
+    background-color: #e9f8f1;
+    color: rgb(11, 12, 12);
+}
+
+.menu:hover .contact-bar1 {
+    display: block;
+}
+
+/* Estilos para el menú hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* Estilos para el banner y el contenido */
+.banner {
+    width: 100%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.title-banner {
+    font-size: 2em;
+    margin: 0;
+}
+
+.title-text {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.btm-banner {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .barnav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: static;
+    }
+
+    .barnav.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .banner {
+        padding: 15px;
+    }
+
+    .title-banner {
+        font-size: 1.5em;
+    }
+
+    .title-text {
+        font-size: 1em;
+    }
+
+    .btm-banner {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .title-banner {
+        font-size: 1.2em;
+    }
+
+    .title-text {
+        font-size: 0.9em;
+    }
+
+    .btm-banner {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* ESTILO PARA CARRUSEL (sin modificaciones) */
+/* Estilos para el carrusel */
+
+/* ESTILO PARA Pe de pagina (sin modificaciones) */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease; /* Agregamos una transición suave al cambio de color */
+}
+
+.footer-links li a:hover {
+    color: #ffa500; /* Cambiamos el color al pasar el mouse sobre los enlaces */
+}
+
+/* Estilos para la fila */
+.row {
+    width: 100%;
+  }
+  
+  /* Estilos para las columnas */
+.col-md-6 {
+    position: relative;
+    width: 100%; /* El ancho de la columna será del 100% */
+  }
+  
+  /* Estilos para los créditos */
+  .sydney-credits {
+    font-size: 14px;
+    color: #fff; /* Texto blanco */
+    background-color: #000; /* Fondo negro */
+    padding: 10px; /* Espaciado interno */
+    width: 100%; /* Ancho igual al 100% */
+    text-align: center;
+  }
+
