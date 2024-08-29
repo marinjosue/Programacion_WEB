@@ -3,30 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROG_CONF</title>
+    <title>inscribe</title>
     <!-- Enlazar al CSS-->
     <link rel="stylesheet" href="css/men_res.css">
+    
 </head>
 <body>
-   <!-- Encabezado -->
-   <header class="header">
+<!-- Encabezado -->
+<header class="header">
     <!-- Logo -->
     <img class="logo" src="img/Logo_CONE.png" alt="Logo">
     <!-- Menú de navegación -->
     <nav class="nav">
         <ul class="barnav" id="navbar">
-            <li class="menu"><a href="index.php">Conferencia</a></li>
-            <li class="menu"><a href="Eventos.php">Eventos</a></li>
+            <li class="menu"><a href="index.php">Conferencia/Eventos</a></li>
             <li class="menu"><a href="quienes-somos.php">Quiénes somos</a></li>
             <li class="menu" id="menu-var">
-                <a href="#programacion">Programación C|O|N|E</a>
-                <div class="contact-bar1">
-                    <button onclick="window.location.href='programar_eventos.php'">Programar Eventos</button>
-                    <button onclick="window.location.href='programar_conferencias.php'">Programar Conferencias</button>
-                </div>
+                <a href="programar_eventos.php">Programación C|O|N|E</a>
             </li>
-            <li class="menu"><a href="login.php">Entrar</a></li>
-            <li class="menu"><a href="registrar.php">Registrarse</a></li>
+            <li class="menu"><a href="FAQ.php">FAQ</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -45,7 +40,7 @@ function toggleMenu() {
 
     <!-- Contenido principal -->
     <main>
-    <h1>Pner algo chever </h1>
+    <h1>FORMULARIO PONENTE</h1>
     </main>
 
     <!-- Pie de página -->

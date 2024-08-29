@@ -1,12 +1,15 @@
 <?php
-    $host = "localhost";
-    $user = "root";
-    $password = "";
-    $database = "cone";  // Cambia el nombre de la base de datos a "cone"
+    // Conexión a la base de datos
+    $servername = "localhost";
+    $username = "root"; // Reemplaza con tu usuario de MySQL
+    $password = ""; // Reemplaza con tu contraseña de MySQL
+    $dbname = "cone"; // Nombre de la base de datos
 
-    $conexion = mysqli_connect($host, $user, $password, $database);
+    // Crear la conexión
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-    if (!$conexion) {
-        die("Conexión fallida: " . mysqli_connect_error());
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
     }
 ?>

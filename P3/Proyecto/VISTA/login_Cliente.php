@@ -1,17 +1,11 @@
+
+
 <?php
-// Conexión a la base de datos
-$servername = "localhost";
-$username = "root"; // Reemplaza con tu usuario de MySQL
-$password = ""; // Reemplaza con tu contraseña de MySQL
-$dbname = "cone"; // Nombre de la base de datos
+include "../MODELO/conexion.php";
 
-// Crear la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+// Recuperar el ID del evento y el nombre del evento desde la URL
+$id_evento = isset($_GET['id_evento']) ? $_GET['id_evento'] : 0;
+$nombre_evento = isset($_GET['nombre_evento']) ? urldecode($_GET['nombre_evento']) : "Evento no especificado";
 
 // Verificar si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,51 +13,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Consulta SQL para verificar las credenciales
-    $sql = "SELECT * FROM CLIENTE WHERE EMAIL = '$email' AND CONTRASENA = '$password'";
-    $result = $conn->query($sql);
+    $stmt = $conn->prepare("SELECT ID_CLIENTE FROM CLIENTE WHERE EMAIL = ? AND CONTRASENA = ?");
+    $stmt->bind_param('ss', $email, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Usuario encontrado, redirigir a la página de conferencias
-        header("Location: index.php");
+        $row = $result->fetch_assoc();
+        $id_cliente = $row['ID_CLIENTE'];
+        // Redirigir a la página de inscribirse con el ID del evento y el ID del cliente
+        header("Location: inscribirse_cliente.php?id_evento=" . $id_evento . "&id_cliente=" . $id_cliente);
+        exit();
     } else {
         // Usuario o contraseña incorrectos
         echo "<script>alert('Usuario o contraseña incorrectos');</script>";
     }
+
+    $stmt->close();
 }
 
 // Cerrar la conexión
 $conn->close();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONFERENCIAS</title>
-    <!-- Enlazar al CSS-->
     <link rel="stylesheet" href="css/men_res.css">
     <link rel="stylesheet" href="css/loginStyles.css">
 </head>
 <body>
-    <!-- Encabezado -->
+<!-- Encabezado -->
 <header class="header">
     <!-- Logo -->
     <img class="logo" src="img/Logo_CONE.png" alt="Logo">
     <!-- Menú de navegación -->
     <nav class="nav">
         <ul class="barnav" id="navbar">
-            <li class="menu"><a href="index.php">Conferencia</a></li>
-            <li class="menu"><a href="Eventos.php">Eventos</a></li>
+            <li class="menu"><a href="index.php">Conferencia/Eventos</a></li>
             <li class="menu"><a href="quienes-somos.php">Quiénes somos</a></li>
             <li class="menu" id="menu-var">
-                <a href="#programacion">Programación C|O|N|E</a>
-                <div class="contact-bar1">
-                    <button onclick="window.location.href='programar_eventos.php'">Programar Eventos</button>
-                    <button onclick="window.location.href='programar_conferencias.php'">Programar Conferencias</button>
-                </div>
+                <a href="programar_eventos.php">Programación C|O|N|E</a>
             </li>
-            <li class="menu"><a href="login.php">Entrar</a></li>
-            <li class="menu"><a href="registrar.php">Registrarse</a></li>
+            <li class="menu"><a href="FAQ.php">FAQ</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -72,12 +68,21 @@ $conn->close();
         </div>
     </nav>
 </header>
+
+<script>
+function toggleMenu() {
+    var nav = document.getElementById('navbar');
+    nav.classList.toggle('show');
+}
+</script>
+
     <main>
+        <h2 class="mensaje">Se inscribe en: <?php echo htmlspecialchars($nombre_evento); ?></h2>
         <!-- Contenedor principal -->
         <section class="formaCo">
             <div class="container">
                 <h2 class="mensaje">Inicio de Sesión</h2>
-                <!-- Diseño del formulario de inicio de sesión -->     
+                <!-- Formulario de inicio de sesión -->
                 <form id="loginForm" method="post">
                     <div class="form-group">
                         <label for="username">Usuario</label>
@@ -85,15 +90,15 @@ $conn->close();
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña</label>
-                        <input type="password" name="password" id="password" placeholder="***********" minlength="8" required>
+                        <input type="password" name="password" id="password" placeholder="***********" required>
                     </div>
                     <div class="form-option">
                         <label><input type="checkbox" name="recordar">Recordar</label>
                         <a href="#" class="Recordatorio">Recuperar contraseña</a>
                     </div>
-                    <button type="submit" class="btn-inicioSesion">ENTRAR</button>
-                    <h2 class="mensaje">¿No tienes cuenta?</h2>
-                    <button type="submit" class="btn-Registrarse" onclick="redirectToRegistrar()">REGISTRARSE</button>
+                    <button type="submit" class="btn-inicioSesion">INSCRIBIRSE</button>
+                    <h2 class="mensaje">¿No tiene cuenta?</h2>
+                    <button type="button" class="btn-Registrarse" onclick="redirectToRegistrar()">REGISTRARSE</button>
                 </form>
             </div>
         </section>
@@ -125,14 +130,6 @@ $conn->close();
       </div>
     </section>
 
-    <!-- JavaScript para el menú hamburguesa -->
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navbar = document.getElementById('navbar');
 
-        hamburger.addEventListener('click', () => {
-            navbar.classList.toggle('show');
-        });
-    </script>
 </body>
 </html>

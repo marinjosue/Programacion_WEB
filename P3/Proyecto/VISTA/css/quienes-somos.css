@@ -242,7 +242,7 @@ body {
   }
   
   /* Estilos para las columnas */
-.col-md-6 {
+.col-md-6-1{
     position: relative;
     width: 100%; /* El ancho de la columna será del 100% */
   }
@@ -300,8 +300,7 @@ body {
 
 .text-gradient {
     background: linear-gradient(45deg, #f3ec78, #af4261);
-    -webkit-background-clip: text;
-    color: transparent;
+     color: transparent;
 }
 
 .lead {

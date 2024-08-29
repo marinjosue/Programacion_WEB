@@ -112,7 +112,13 @@ body {
 .banner {
     width: 100%;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #dbe6ec;
+    text-align: center;
+}
+.banner_estado {
+    width: 100%;
+    padding: 20px;
+    background-color: #6cf1d0;
     text-align: center;
 }
 
@@ -278,3 +284,89 @@ body {
     text-align: center;
   }
 
+    /* Estilos para eventos */
+/* Estilo general para los eventos */
+/* Estilo general para los cuadros de eventos */
+/* Contenedor de eventos como grid de 3 columnas */
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las columnas */
+    margin-top: 20px;
+}
+
+/* Estilo general para los cuadros de eventos */
+.evento {
+    background-color: #e3f2fd; /* Fondo de color azul claro */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Estilo para el contenido del evento */
+.evento-contenido {
+    padding: 20px;
+    border-left: 4px solid #f44336; /* Línea de color rojo en el borde izquierdo */
+}
+
+/* Títulos y subtítulos */
+.evento h2 {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.evento h3 {
+    color: #000;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Estilo para los botones */
+.evento .btn {
+    display: block;
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.evento .btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Hover effect para mejorar la interactividad */
+.evento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes de diseño responsivo */
+@media (max-width: 768px) {
+    .eventos-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas más pequeñas */
+    }
+
+    .evento {
+        padding: 15px;
+    }
+
+    .evento h2 {
+        font-size: 20px;
+    }
+
+    .evento .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .eventos-grid {
+        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+}
