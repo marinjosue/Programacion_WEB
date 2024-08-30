@@ -45,6 +45,11 @@ $conn->close();
     <title>CONFERENCIAS</title>
     <link rel="stylesheet" href="css/men_res.css">
     <link rel="stylesheet" href="css/loginStyles.css">
+    <script>
+        function redirectToRegistrar() {
+            window.location.href = 'registrar.php';
+        }
+    </script>
 </head>
 <body>
 <!-- Encabezado -->
