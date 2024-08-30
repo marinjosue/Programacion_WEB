@@ -4,36 +4,6 @@ include "../MODELO/conexion.php";
 // Recuperar el ID del evento y el nombre del evento desde la URL
 $id_evento = isset($_GET['id_evento']) ? (int)$_GET['id_evento'] : 0;
 $nombre_evento = isset($_GET['nombre_evento']) ? urldecode($_GET['nombre_evento']) : "Evento no especificado";
-
-// Verificar si el formulario ha sido enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = trim($_POST['username']);
-    $password = trim($_POST['password']);
-
-    // Consulta SQL para verificar las credenciales
-    $stmt = $conn->prepare("SELECT * FROM INTEGRANTE WHERE EMAIL = ? AND ROL = ?");
-    if ($stmt === false) {
-        die('Error en la preparación de la consulta: ' . $conn->error);
-    }
-
-    $stmt->bind_param('ss', $email, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $id_cliente = $row['ID_CLIENTE'];
-        // Redirigir a la página de inscripción con el ID del evento y el ID del cliente
-        header("Location: inscribirse_cliente.php?id_evento=" . $id_evento . "&id_cliente=" . $id_cliente);
-        exit();
-    } else {
-        // Usuario o contraseña incorrectos
-        echo "<script>alert('Usuario o contraseña incorrectos');</script>";
-    }
-
-    $stmt->close();
-}
-
 // Cerrar la conexión
 $conn->close();
 ?>
@@ -60,7 +30,7 @@ $conn->close();
             <li class="menu" id="menu-var">
                 <a href="programar_eventos.php">Programación C|O|N|E</a>
             </li>
-            <li class="menu"><a href="FAQ.php">FAQ</a></li>
+            <li class="menu"><a href="FAQ.php">Cliente/Registro</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -83,11 +53,12 @@ function toggleMenu() {
     <section class="formaCo">
         <div class="container">
             <h2 class="mensaje">Inicio de Sesión</h2>
-            <!-- Formulario de inicio de sesión -->
-            <form id="loginForm" method="post">
+            <form id="loginForm" action="../CONTROLADOR/inscribir_ponente.php" method="post">
+                <input type="hidden" name="id_evento" value="<?php echo htmlspecialchars($id_evento); ?>">
+                <input type="hidden" name="nombre_evento" value="<?php echo htmlspecialchars($nombre_evento); ?>">
                 <div class="form-group">
                     <label for="username">Usuario</label>
-                    <input type="text" name="username" id="username" placeholder="Usuario" minlength="4" maxlength="25" required>
+                    <input type="text" name="username" id="username" placeholder="Usuario" minlength="4"  required>
                 </div>
                 <div class="form-group">
                     <label for="password">Contraseña</label>
@@ -95,10 +66,10 @@ function toggleMenu() {
                 </div>
                 <div class="form-option">
                     <label><input type="checkbox" name="recordar"> Recordar</label>
-                    <a href="#" class="Recordatorio">Recuperar contraseña</a>
                 </div>
                 <button type="submit" class="btn-inicioSesion">INSCRIBIRSE</button>
             </form>
+
         </div>
     </section>
 </main>

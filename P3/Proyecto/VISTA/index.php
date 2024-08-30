@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONFERENCIAS</title>
     <link rel="stylesheet" type="text/css" href="css/cssIndex.css">
+    <link rel="stylesheet" href="css/men_res.css">
 </head>
 <body>
 <!-- Encabezado -->
@@ -19,7 +20,7 @@
             <li class="menu" id="menu-var">
                 <a href="programar_eventos.php">Programación C|O|N|E</a>
             </li>
-            <li class="menu"><a href="FAQ.php">FAQ</a></li>
+            <li class="menu"><a href="FAQ.php">Cliente/Registro</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -28,6 +29,13 @@
         </div>
     </nav>
 </header>
+
+<script>
+function toggleMenu() {
+    var nav = document.getElementById('navbar');
+    nav.classList.toggle('show');
+}
+</script>
 
 <div class="imagenes">
     <img src="img/img_conf.jpg" alt="Imagen">

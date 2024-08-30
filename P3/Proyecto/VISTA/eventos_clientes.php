@@ -38,7 +38,7 @@ $result = $sql->get_result();
             <li class="menu" id="menu-var">
                 <a href="programar_eventos.php">Programación C|O|N|E</a>
             </li>
-            <li class="menu"><a href="FAQ.php">Eventos registrados</a></li>
+            <li class="menu"><a href="FAQ.php">Cliente/Registro</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>

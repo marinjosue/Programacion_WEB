@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirmar'])) {
     $insert_stmt->bind_param('iis', $id_evento, $id_INTEGRANTE, $fecha_registro);
 
     if ($insert_stmt->execute()) {
-        echo "<script>alert('Inscripción confirmada.'); window.location.href = 'index.php';</script>";
+        echo "<script>alert('Inscripción confirmada.'); window.location.href = '../VISTA/index.php';</script>";
     } else {
         echo "<script>alert('Error al registrar en el evento.');</script>";
     }

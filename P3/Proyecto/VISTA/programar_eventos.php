@@ -62,7 +62,7 @@ $conn->close();
             <li class="menu" id="menu-var">
                 <a href="programar_eventos.php">Programación C|O|N|E</a>
             </li>
-            <li class="menu"><a href="FAQ.php">FAQ</a></li>
+            <li class="menu"><a href="FAQ.php">Cliente/Registro</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -88,7 +88,7 @@ function toggleMenu() {
             <form id="loginForm" method="post">
                 <div class="form-group">
                     <label for="username">Usuario</label>
-                    <input type="text" name="username" id="username" placeholder="Usuario" minlength="4" maxlength="25" required>
+                    <input type="text" name="username" id="username" placeholder="Usuario" minlength="4"  required>
                 </div>
                 <div class="form-group">
                     <label for="password">Contraseña</label>
@@ -96,7 +96,6 @@ function toggleMenu() {
                 </div>
                 <div class="form-option">
                     <label><input type="checkbox" name="recordar"> Recordar</label>
-                    <a href="#" class="Recordatorio">Recuperar contraseña</a>
                 </div>
                 <button type="submit" class="btn-inicioSesion">Entrar</button>
             </form>

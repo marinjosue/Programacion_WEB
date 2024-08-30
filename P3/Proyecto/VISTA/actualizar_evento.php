@@ -74,7 +74,7 @@ if (!$evento) {
                 <li class="menu" id="menu-var">
                     <a href="programar_eventos.php">Programación C|O|N|E</a>
                 </li>
-                <li class="menu"><a href="FAQ.php">Eventos registrados</a></li>
+                <li class="menu"><a href="FAQ.php">Cliente/Registro</a></li>
             </ul>
         </nav>
     </header>

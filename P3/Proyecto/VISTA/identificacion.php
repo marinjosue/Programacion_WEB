@@ -26,7 +26,7 @@ $id_evento = isset($_GET['id_evento']) ? $_GET['id_evento'] : 0;
             <li class="menu" id="menu-var">
                 <a href="programar_eventos.php">Programación C|O|N|E</a>
             </li>
-            <li class="menu"><a href="FAQ.php">FAQ</a></li>
+            <li class="menu"><a href="FAQ.php">Cliente/Registro</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <div class="bar"></div>
