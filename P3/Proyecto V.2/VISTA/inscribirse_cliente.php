@@ -61,6 +61,7 @@ $fecha_actual = date("Y-m-d");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción</title>
     <link rel="stylesheet" href="css/men_res.css">
+    <link rel="stylesheet" href="css/inscribirse_cliente.css">
 </head>
 <body>
 <header class="header">
