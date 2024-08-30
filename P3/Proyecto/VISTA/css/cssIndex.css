@@ -1,0 +1,405 @@
+/* Estilos generales */
+body {
+    padding-top: 60px; /* Ajusta según la altura de tu navbar */
+    width: 100%;
+    background-color: #f2f4f4; /* Color de fondo neutro */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
+/* ESTILO PARA CARRUSEL (sin modificaciones) */
+/* Estilos para el carrusel */
+.imagenes {
+    display: flex;
+    width: 100%;
+    height: 90%;
+}
+
+.imagenes img {
+    width: 100px;
+    height: 400px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+    max-width: 100%; /* la imagen nunca va a ser mas grande que el contenedor */
+    display: block; /* asegura que la imagen no tenga un margen extra */
+}
+
+.imagenes img:hover {
+    cursor: default;
+    width: 300px;
+    opacity: 2;
+    filter: contrast(120%);
+}
+
+
+/* Estilos para el encabezado */
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Fondo blanco para el encabezado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    z-index: 999;
+}
+
+.logo {
+    height: 40px;  
+}
+
+.nav {
+    flex: 1;
+    text-align: right;
+}
+
+.barnav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.barnav li {
+    margin-left: 20px;
+    height: 40px;  
+    display: flex;
+    align-items: center;
+}
+
+.barnav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333; /* Color gris oscuro */
+    transition: color 0.3s ease;
+}
+
+.barnav a:hover {
+    color: #007BFF; /* Color azul en hover */
+}
+
+/* Estilos para el menú desplegable */
+.contact-bar1 {
+    display: none;
+    position: absolute;
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    width: 200px; /* Ajustado para mejor proporción */
+}
+
+.contact-bar1 button {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    color: #333; /* Color de texto gris oscuro */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.contact-bar1 button:hover {
+    background-color: #e0e0e0; /* Color gris aún más claro en hover */
+}
+
+/* Estilos para el menú hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* Estilo para el banner principal */
+.banner {
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(90deg, #2980b9 0%, #6dd5fa 100%);
+    text-align: center;
+    color: #fff;
+}
+
+.title-banner {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.title-text {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.btm-banner {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btm-banner:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el banner de eventos activos */
+.banner_estado {
+    width: 100%;
+    padding: 20px;
+    background-color: #e0f7fa; /* Color azul claro */
+    text-align: center;
+}
+
+.title-banner {
+    font-size: 2em;
+    margin: 0;
+}
+
+.title-text {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.btm-banner {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.title-banner {
+    font-size: 2em;
+    margin: 0;
+}
+
+.title-text {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.btm-banner {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Estilos para el grid de eventos */
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Columnas más estrechas */
+    gap: 10px; /* Espaciado reducido entre los elementos */
+    margin-top: 15px;
+    padding: 0 5px; /* Espaciado lateral reducido */
+}
+
+.evento {
+    background-color: #ffffff; /* Fondo blanco para los eventos */
+    border-radius: 6px; /* Bordes redondeados sutiles */
+    padding: 12px; /* Padding reducido */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.evento-contenido {
+    padding: 12px; /* Padding reducido */
+    border-left: 3px solid #007BFF; /* Línea azul más delgada */
+}
+
+.evento h2 {
+    color: #007BFF; /* Color azul para títulos */
+    font-size: 1.4em; /* Tamaño de fuente reducido */
+    font-weight: bold;
+}
+
+.evento h3 {
+    color: #333; /* Color gris oscuro para subtítulos */
+    font-weight: bold;
+    margin-top: 6px; /* Margen reducido */
+}
+
+.evento .btn {
+    display: block;
+    background-color: #007BFF;
+    color: white;
+    padding: 6px 12px; /* Tamaño de padding reducido */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px; /* Bordes redondeados sutiles */
+    margin-top: 8px; /* Margen reducido */
+    transition: background-color 0.3s;
+}
+
+.evento .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Hover effect para mejorar la interactividad */
+.evento:hover {
+    transform: translateY(-2px); /* Efecto de elevación más sutil */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .eventos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas más pequeñas */
+        gap: 8px; /* Espaciado reducido */
+    }
+
+    .evento {
+        padding: 10px;
+    }
+
+    .evento h2 {
+        font-size: 1.2em; /* Tamaño de fuente más reducido */
+    }
+
+    .evento .btn {
+        padding: 4px 8px; /* Tamaño de padding reducido */
+        font-size: 12px; /* Tamaño de fuente reducido */
+    }
+}
+
+@media (max-width: 480px) {
+    .eventos-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    }
+}
+
+
+/* Estilos del pie de página */
+.footer {
+    background-color: #333; /* Fondo oscuro para el pie de página */
+    color: #fff;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #ffa500; /* Color dorado en hover */
+}
+
+/* Estilos para la fila */
+.row {
+    width: 100%;
+}
+
+/* Estilos para las columnas */
+.col-md-6 {
+    position: relative;
+    width: 100%;
+}
+
+/* Estilos para los créditos */
+.sydney-credits {
+    font-size: 14px;
+    color: #fff; /* Texto blanco */
+    background-color: #333; /* Fondo oscuro */
+    padding: 10px; /* Espaciado interno */
+    width: 100%; /* Ancho igual al 100% */
+    text-align: center;
+}
+
+/* Estilos para el contenedor del video */
+.video-popup {
+    position: fixed;
+    bottom: 20px; /* Espaciado desde el fondo */
+    right: 20px;  /* Espaciado desde el lado derecho */
+    width: 320px; /* Ancho del contenedor del video */
+    height: 180px; /* Altura del contenedor del video */
+    border: 3px solid #007BFF; /* Borde azul */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    overflow: hidden; /* Oculta el desbordamiento */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    display: flex; /* Utiliza Flexbox para el contenido */
+    flex-direction: column; /* Organiza el contenido verticalmente */
+}
+
+/* Estilos para el iframe del video */
+.video-popup iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Estilos para el botón de cierre */
+.close-btn {
+    position: absolute;
+    top: 5px; /* Espaciado desde la parte superior */
+    right: 5px; /* Espaciado desde el lado derecho */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro y semi-transparente */
+    color: #fff; /* Color del texto */
+    border: none;
+    border-radius: 50%; /* Bordes redondeados para el botón */
+    width: 30px; /* Tamaño del botón */
+    height: 30px; /* Tamaño del botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Cursor de mano al pasar por encima */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+}
+
+/* Cambiar color al pasar el cursor por encima */
+.close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

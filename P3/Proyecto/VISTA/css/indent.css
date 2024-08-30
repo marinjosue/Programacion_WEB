@@ -1,0 +1,44 @@
+/* Estilos para el contenido principal */
+main {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Estilos para el grid */
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilos para cada item del grid */
+.grid-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para las imágenes */
+.grid-image {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: auto;
+}
+
+/* Estilos para los títulos */
+.grid-item h3 {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #333;
+}

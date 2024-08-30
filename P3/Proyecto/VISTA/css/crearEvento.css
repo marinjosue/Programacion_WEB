@@ -1,0 +1,146 @@
+/* Estilo global */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+/* Estilo del formulario */
+form {
+    background-color: #fff;
+    padding: 15px; /* Reducido para disminuir la altura */
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form input[type="email"],
+form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Contenedor del botón */
+.form-button-container {
+    text-align: center;
+    margin-top: 20px; /* Espacio superior para separar del resto del formulario */
+}
+
+form button {
+    background-color: #5cb85c;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #4cae4c;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 80%; /* Reducido para hacer la tabla más estrecha */
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Reducido para hacer la tabla menos alta */
+    text-align: left;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+table td {
+    font-size: 14px;
+}
+
+/* Estilo de los botones en la tabla */
+table .btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+table .btn {
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+table .btn.green {
+    background-color: #5cb85c;
+}
+
+table .btn.red {
+    background-color: #d9534f;
+}
+
+table .btn.green:hover {
+    background-color: #4cae4c;
+}
+
+table .btn.red:hover {
+    background-color: #c9302c;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-social-links {
+    margin: 10px 0;
+}
+
+footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo del título principal */
+h1,
+h2 {
+    text-align: center;
+}
